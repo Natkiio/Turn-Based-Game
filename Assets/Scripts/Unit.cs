@@ -18,9 +18,9 @@ public class Unit : MonoBehaviour
         } 
         
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetMouseButtonDown(0)) // 0 is the Left (Primary) Mouse Button
         {
-            Move(new Vector3(4,0,4)); //When T is pressed, move to this location.
+            Move(MouseWorld.GetPosition()); //Moves unit to mouse click position 
         }
     }
    private void Move (Vector3 targetPos)
