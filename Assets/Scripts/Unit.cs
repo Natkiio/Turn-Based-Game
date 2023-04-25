@@ -8,6 +8,10 @@ public class Unit : MonoBehaviour
    [SerializeField] private Animator unitAnimator;
     private Vector3 targetPos;
 
+    private void Awake()
+    {
+        targetPos = transform.position;
+    }
 
     private void Update() 
     {
@@ -31,13 +35,8 @@ public class Unit : MonoBehaviour
             unitAnimator.SetBool("isWalking",false);
         }
         
-
-        if (Input.GetMouseButtonDown(0)) // 0 is the Left (Primary) Mouse Button
-        {
-            Move(MouseWorld.GetPosition()); //Moves unit to mouse click position 
-        }
     }
-   private void Move (Vector3 targetPos)
+   public void Move (Vector3 targetPos)
    {
         this.targetPos = targetPos;
    }
